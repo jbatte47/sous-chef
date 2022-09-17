@@ -1,24 +1,19 @@
-import { SafeAreaView, StyleSheet, Text } from 'react-native';
+import React from 'react';
+import { SafeAreaView, Text } from './src/styled';
+import StorybookUI from './storybook';
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  tempText: {
-    margin: 10,
-  },
-});
-
-export default function App() {
+function App() {
   return (
-    <SafeAreaView style={styles.container}>
-      <Text style={styles.tempText}>
+    <SafeAreaView className="flex-1 bg-white items-center justify-start">
+      <Text className="m-10 text-xl">
         Hi! I'm just an empty template right now, but I'm going to be the open
         source sous-chef app! Stay tuned!
       </Text>
     </SafeAreaView>
   );
 }
+
+const defaultExport =
+  __DEV__ && process.env.START_STORYBOOK_OVERRIDE == '1' ? StorybookUI : App;
+
+export default defaultExport;
