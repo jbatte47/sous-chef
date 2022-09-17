@@ -1,6 +1,3 @@
-// if you use expo remove this line
-import { AppRegistry } from 'react-native';
-
 import {
   getStorybookUI,
   configure,
@@ -24,9 +21,5 @@ configure(() => {
 const StorybookUIRoot = getStorybookUI({
   asyncStorage: require('@react-native-async-storage/async-storage').default,
 });
-
-// If you are using React Native vanilla and after installation you don't see your app name here, write it manually.
-// If you use Expo you should remove this line.
-AppRegistry.registerComponent('%APP_NAME%', () => StorybookUIRoot);
 
 export default StorybookUIRoot;
